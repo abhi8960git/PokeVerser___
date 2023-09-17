@@ -1,0 +1,336 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "pokemon";
+  src: url("../public/PokemonSolid.ttf");
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+
+body {
+  width: 100vw;
+  height: 100vh;
+background-image: url('../public/background.png'); 
+z-index: -99;
+background-repeat: no-repeat;
+background-attachment: fixed;
+/* overflow: hidden; */
+}
+
+body::after{
+  content: '';
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -9999;
+  background-attachment: fixed;
+}
+
+.glassmorphism{
+  backdrop-filter: blur(2px) saturate(86%);
+  -webkit-backdrop-filter: blur(2px) saturate(86%);
+  background-color: rgba(17, 25, 40, 0.77);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  z-index: 9;
+}
+
+.image-animation{
+
+}
+
+.font {
+  font-family: "pokemon";
+}
+
+.shadow {
+  box-shadow: 1px -3px 84px -6px rgba(255, 222, 0, 0.65);
+  -webkit-box-shadow: 1px -3px 84px -6px rgba(255, 222, 0, 0.65);
+  -moz-box-shadow: 1px -3px 84px -6px rgba(255, 222, 0, 0.65);
+}
+
+/* button */
+.btn {
+  border: none;
+  width: 15em;
+  height: 5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #1C1A1C;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+}
+
+.sparkle {
+  fill: #F7CC32;
+  transition: all 800ms ease;
+}
+
+.text {
+  font-weight: 700;
+  color: #AAAAAA;
+  
+  font-size: larger;
+}
+
+.btn:hover {
+  background: linear-gradient(0deg,#f7cc32c2,#f7cc32db);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+  inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+  0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+  0px 0px 180px 0px #F7CC32;
+  transform: translateY(-2px);
+}
+
+.btn:hover .text {
+  color: white;
+}
+
+.btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
+}
+
+
+
+/* input animation css */
+
+.form-item{
+  position: relative;
+  margin-bottom: 15px
+}
+.form-item input{
+  display: block;
+  height: 40px;
+  background: transparent;
+  /* border: solid 1px #ccc; */
+  outline: none;
+  transition: all .3s ease;
+  padding: 0 15px;
+  color: rgba(255, 255, 255, 0.708);
+  
+}
+.form-item input:focus{
+  /* border-color: blue */
+}
+.form-item label{
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 8px;
+  left: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  /* background: #fff; */
+  padding: 0 10px;
+  color:rgba(255, 255, 255, 0.541);
+  transition: all .3s ease
+}
+.form-item input:focus + label,
+.form-item input:valid + label{
+  font-size: 17px;
+  top: -15px;
+  /* background:black; */
+}
+.form-item input:focus + label{
+  /* color: blue */
+}
+
+/* Swiper css */
+
+.swiper {
+  width: 80%;
+  /* height: 320px; */
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide:nth-child(1n) {
+  background-color: rgb(206, 17, 17);
+}
+
+.swiper-slide:nth-child(2n) {
+  background-color: rgb(0, 140, 255);
+}
+
+.swiper-slide:nth-child(3n) {
+  background-color: rgb(10, 184, 111);
+}
+
+.swiper-slide:nth-child(4n) {
+  background-color: rgb(211, 122, 7);
+}
+
+.swiper-slide:nth-child(5n) {
+  background-color: rgb(118, 163, 12);
+}
+
+.swiper-slide:nth-child(6n) {
+  background-color: rgb(180, 10, 47);
+}
+
+.swiper-slide:nth-child(7n) {
+  background-color: rgb(35, 99, 19);
+}
+
+.swiper-slide:nth-child(8n) {
+  background-color: rgb(0, 68, 255);
+}
+
+.swiper-slide:nth-child(9n) {
+  background-color: rgb(218, 12, 218);
+}
+
+.swiper-slide:nth-child(10n) {
+  background-color: rgb(54, 94, 77);
+}
+
+/* button */
+.button {
+  width: 200px;
+  height: 60px;
+  border: 3px solid #f5841f;
+  border-radius: 45px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: transparent;
+  color:#f5841f;
+  font-size: 1.1em;
+  font-weight: 550;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button:hover {
+  background: #f5841f;
+  color: white;
+  font-size: 1.3em;
+}
+
+
+/* Minting button nft creation  */
+
+.button-mint {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #F6CF57;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #F6CF57;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.button-mint:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #F6CF57;
+  z-index: -1;
+}
+
+.button-mint:hover, .button-mint:focus {
+  color: black;
+}
+
+.button-mint:hover:before, .button-mint:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button-mint:active {
+  transform: scale(0.9);
+}
+
+/* attacks mint  */
+
+.button-minti {
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.3em 1em;
+  border: 2px solid #F6CF57;
+  /* border-radius: 10px; */
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #F6CF57;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+.button-minti:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #F6CF57;
+  z-index: -1;
+}
+
+.button-minti:hover, .button-minti:focus {
+  color: black;
+}
+
+.button-minti:hover:before, .button-minti:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.button-minti:active {
+  transform: scale(0.9);
+}
